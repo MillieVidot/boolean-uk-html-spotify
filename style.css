@@ -14,10 +14,16 @@ html {
    --dark-grey: #212121;
    --grey: #535353;
    --light-grey:#b3b3b3;
+   --white50: rgba(255, 255, 255, 0.5);
 
 }
 
 /* UTILITY STYLES */
+
+a {
+   font-size: 0.6rem;
+   text-decoration: none;
+}
 
 h2 {
    font-size: 1.4rem;
@@ -29,7 +35,7 @@ h3 {
 
 p {
    font-size: 0.65rem;
-   opacity: 50%;
+   color: var(--white50);
    margin-top: 0.4rem;
 }
 
@@ -58,10 +64,16 @@ text-align: center;
    border-radius: 50%;
 }
 
+.white {
+   color: white;
+}
+
 /* utility end */
 
 
 body {
+   width: 100vw;
+   height: 100vh;
    background-color: var(--indigo);
 }
 
@@ -73,9 +85,12 @@ body {
    display: grid;
    grid-template: 
       "left-nav main" 1fr
-      "player-nav player-nav" 90px /
-      180px 1fr;
+      "player-nav player-nav" auto /
+      auto 1fr;
+
+   height: 100vh;
   }
+
 
 
 
@@ -88,11 +103,47 @@ body {
 
 
 
-/* MAIN NAV  */
+/* Middle NAV  */
+
+.main .channels ol {
+   text-align: center;
+   height: 25px;
+}
 
 .main .channels li {
    display: inline-block;
+   font-weight: 600;
+   margin: 0 4px;
 }
+
+.main .channels a{
+   color: var(--white50);
+}
+
+.main .channels li:hover {
+   border-bottom: solid 3px var(--green)
+   
+}
+
+
+/* top bar  */
+
+.top-bar {
+   position: sticky;
+   top:0;
+   background-color: rgba(0, 0, 0, 0.3);
+z-index: 100;
+   display: grid;
+   justify-items: right;
+}
+
+.top-bar .upgrade {
+   border: solid 1px white;
+   border-radius: 30px;
+   padding: 8px 30px;
+   text-align: center;
+   }
+
 
 /* MAIN COVERS */
 
@@ -100,20 +151,19 @@ body {
    grid-area: main;
 
    display: grid;
-   grid-gap: 30px;
-
+   grid-gap: 10px;
    overflow: scroll;
+   height: 100%;
+
+   position: relative;
 }
 
-.player-nav {
-   grid-area: player-nav;
-   background-color: var(--dark-grey);
-}
+
 
 .main .covers {
    display: grid;
    grid-auto-flow: column;
-   grid-gap: 20px;
+   grid-gap: 15px;
    justify-content: left;
 
    width: 1fr;
@@ -126,8 +176,7 @@ body {
 
 .main .overlay {
    position: absolute; 
-   /* background: rgb(0, 0, 0); */
-   background: rgba(0, 0, 0, 0.7); /* Black see-through */
+   background: rgba(0, 0, 0, 0.7);
    transition: .3s ease-in-out;
    opacity:0;
    padding: 40px;
@@ -139,7 +188,79 @@ body {
    cursor: pointer;
 }
 
-.main .recently-played {
-   overflow: auto;
-   white-space: nowrap;
+
+/* player */
+
+.player-nav {
+   grid-area: player-nav;
+   background-color: var(--dark-grey);
+
+   width: 100vw;
+   position: sticky;
+   bottom: 0;
+
+   display: grid;
+   grid-template-columns: auto 1fr auto;
+   place-items: center;
+   padding: 10px 8px;
 }
+
+.player-nav p{
+   margin: 2px 0;
+   padding-right: 20px;
+}
+
+.player-nav .now-playing,
+.player-nav .settings,
+.player-nav .progress {
+   display: grid;
+   grid-auto-flow: column;
+   place-items: center;
+   grid-gap: 10px;
+
+   transform: .3s;
+   transition: ease-in-out;
+}
+
+.player-nav .buttons {
+   display: grid;
+   grid-template-columns:1fr 20px 20px 35px 20px 20px 1fr;
+   
+   place-items: center;
+   grid-gap: 15px;
+
+   transform: .3s;
+   transition: ease-in-out;
+}
+
+
+.player-nav .now-playing img {
+   opacity: 50%;
+}
+
+.player-nav .now-playing img:hover {
+   opacity: 100%;
+   cursor: pointer;
+
+}
+
+.player-nav .now-playing img:active {
+   transform: scale(0.95);
+}
+
+.player-nav .settings img:hover,
+.player-nav .buttons img:hover {
+   opacity: 50%;
+   cursor: pointer;
+
+}
+
+.player-nav .settings img:active,
+.player-nav .buttons img:active {
+   opacity: 20%;
+   transform: scale(0.95);
+}
+
+
+
+

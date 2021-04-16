@@ -17,19 +17,20 @@
          <div class="account">Millie Vidot</div>
       </nav>
 
-      <main class="main pad">
+      <main class="main">
+         <header class="top-bar pad"><a class="upgrade" href="#">UPGRADE NOW</a></header>
          <nav class="channels">
             <ol>
-               <li>MUSIC</li>
-               <li>PODCAST</li>
-               <li>RANKINGS</li>
-               <li>GENRE & MOOD</li>
-               <li>NEW RELEASES</li>
-               <li>DISCOVER</li>
+               <li><a href="#">MUSIC</a></li>
+               <li><a href="#">PODCAST</a></li>
+               <li><a href="#">RANKINGS</a></li>
+               <li><a href="#">GENRE & MOOD</a></li>
+               <li><a href="#">NEW RELEASES</a></li>
+               <li><a href="#">DISCOVER</a></li>
             </ol>
          </nav>
          
-         <section class="recently-played">
+         <section class="recently-played pad">
             <h2>Recently played</h2>
             <ul class="covers">
                <li class="card">
@@ -82,7 +83,7 @@
             </ul>
          </section>
 
-         <section class="created-for-you">
+         <section class="created-for-you pad">
             <h2>Created for you</h2>
             <p class="subtitle">Lorem ipsum dolor sit, amet consectetur adipisicing elit.</p>
             <ul class="covers">
@@ -105,7 +106,7 @@
             </ul>
          </section>
 
-         <section class="pop-art">
+         <section class="pop-art pad">
             <h2>Most popular artists</h2>
             <p class="subtitle">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
             <ul class="covers">
@@ -130,7 +131,39 @@
 
       </main>
 
-      <nav class="player-nav pad">Player here</nav>
+      <nav class="player-nav">
+         <div class="now-playing">
+            <img src="images/player-left.png" width="40px" alt="R.E.M"/>
+            <div>
+               <h3>Drive</h3>
+               <p>R.E.M</p>
+            </div>
+            <img src="images/icons/heart.svg" width="15px"  alt="Favourite"/>
+            <img src="images/icons/folder.svg" width="15px" alt="Folder"/>
+         </div>
+         <div class="controls">
+            <div class="buttons">
+               <div></div>
+               <img src="images/icons/shuffle.svg" height="15px" alt="Shuffle"/>
+               <img src="images/icons/skipleft.svg" height="15px" alt="Back"/>
+               <img src="images/icons/play.svg" height="35px" alt="Play"/>
+               <img src="images/icons/skipright.svg" height="15px" alt="Skip"/>
+               <img src="images/icons/repeat.svg" height="15px" alt="Repeat"/>
+               <div></div>
+            </div>
+            <div class="progress">
+               <p class="white">1:09</p>
+               <img src="images/icons/progress.svg" width="350px" alt="Progress"/>
+               <p class="white">4:32</p>
+            </div>
+         </div>
+         <div class="settings">
+            <img src="images/icons/options.svg" height="15px" alt="Playlist Options"/>
+            <img src="images/icons/device.svg" height="13px" alt="Screen"/>
+            <img class="volume-on" src="images/icons/volume-on.svg" height="16px" alt="Volume"/>
+            <img src="images/icons/vol-bar.svg" width="100px" alt="Volume"/>
+         </div>
+      </nav>
 
    </div>
 </body>
